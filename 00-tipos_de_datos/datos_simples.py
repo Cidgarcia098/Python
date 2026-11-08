@@ -31,6 +31,4 @@ tipos_booleanos = {
     "bool": True,
     "boolean": False
 }
-#########################################
-    
 
