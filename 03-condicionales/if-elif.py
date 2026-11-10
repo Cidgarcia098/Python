@@ -1,57 +1,43 @@
-"""Clase: tomar decisiones con if, elif y else
+"""Clase: elegir entre varias alternativas con if, elif y else
 
-Estas estructuras permiten que un programa elija qué instrucciones ejecutar
-según se cumplan o no unas condiciones.
+Python evalua las condiciones de arriba hacia abajo. Ejecuta solo el primer
+bloque cuya condicion sea verdadera; si ninguna coincide, ejecuta else.
+elif significa "si no, si". Puede haber varios elif y el else es opcional.
 
-La forma general es:
-
-    if primera_condicion:
-        # Se ejecuta si la primera condición es verdadera.
-    elif segunda_condicion:
-        # Se ejecuta si la primera fue falsa y la segunda es verdadera.
-    else:
-        # Se ejecuta si ninguna condición anterior fue verdadera.
-
-Python revisa las condiciones de arriba hacia abajo y ejecuta solo el primer
-bloque que corresponda. Por eso, el orden importa: conviene escribir primero
-los casos más específicos y después los más generales. `else` es opcional y
-no lleva una condición.
-
-Ejemplo con edades:
-
-    edad = 15
-    if edad < 18:
-        print("Menor de edad")
-    elif edad < 65:
-        print("Adulto")
-    else:
-        print("Adulto mayor")
-
-Con edad 15 se imprime "Menor de edad". Con edad 30 se imprime "Adulto":
-la primera condición es falsa y la segunda verdadera. Con edad 70 se imprime
-"Adulto mayor", porque ambas condiciones anteriores son falsas.
-
-Ahora probaremos dos decisiones relacionadas con un presupuesto: una cadena
-`if-elif-else` para clasificar el ingreso y otra para comparar los gastos.
+El orden importa. En una clasificacion por rangos, las condiciones deben
+separar claramente los intervalos para que cada valor tenga un resultado.
 """
 
-ingreso_mensual = float(input("Ingrese su ingreso mensual: "))
-gasto_mensual = float(input("Ingrese su gasto mensual: "))
+puntaje = 76
+print("Puntaje:", puntaje)
 
-# Cada elif se considera solo si las condiciones anteriores fueron falsas.
-if ingreso_mensual < 500:
-    print("Ingreso bajo.")
-elif ingreso_mensual < 1000:
-    print("Ingreso medio.")
-elif ingreso_mensual < 2000:
-    print("Ingreso alto.")
+if puntaje >= 90:
+    calificacion = "Excelente"
+elif puntaje >= 75:
+    calificacion = "Muy bien"
+elif puntaje >= 60:
+    calificacion = "Aprobado"
 else:
-    print("Ingreso muy alto.")
+    calificacion = "Hay que seguir practicando"
 
-# Esta segunda cadena toma una decisión distinta: compara gastos e ingresos.
-if gasto_mensual > ingreso_mensual:
-    print("Tus gastos superan tus ingresos.")
-elif gasto_mensual == ingreso_mensual:
-    print("Gastaste todo tu ingreso.")
-else:
-    print("Te quedó dinero después de los gastos.")
+print("Resultado:", calificacion)
+
+# Ejemplos de limites: cada valor pertenece a una sola categoria.
+for puntaje_de_prueba in (95, 90, 75, 60, 59):
+    if puntaje_de_prueba >= 90:
+        resultado = "Excelente"
+    elif puntaje_de_prueba >= 75:
+        resultado = "Muy bien"
+    elif puntaje_de_prueba >= 60:
+        resultado = "Aprobado"
+    else:
+        resultado = "Hay que seguir practicando"
+    print(f"{puntaje_de_prueba}: {resultado}")
+
+# A diferencia de una cadena if-elif, dos if independientes pueden ejecutarse
+# ambos si sus condiciones son verdaderas.
+temperatura = 28
+if temperatura > 20:
+    print("\nHace mas de 20 grados.")
+if temperatura > 25:
+    print("Tambien hace mas de 25 grados.")
