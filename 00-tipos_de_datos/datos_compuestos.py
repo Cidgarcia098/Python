@@ -1,66 +1,45 @@
-# Tipos de variables en Python
+"""Clase 2: tipos de datos compuestos
 
-# camelcase
-NombreCompleto = "Ricardo Patricio"
+Los tipos compuestos permiten agrupar varios valores:
+- list: coleccion ordenada y modificable; se escribe con corchetes.
+- tuple: coleccion ordenada que no se modifica; se escribe con parentesis.
+- set: conjunto sin posiciones; no conserva elementos duplicados.
+- dict: relaciona claves con valores; se consulta usando una clave.
 
-# snake_case
-apellido_completo = "Cid Garcia"
+Los indices de las secuencias (list y tuple) empiezan en cero. Los conjuntos
+no se consultan por indice. Las claves de un diccionario no son posiciones.
+"""
 
-# concatenation con +
-bienvenido = "NombreCompleto" + "apellido_completo"
+colores = ["rojo", "verde", "azul"]
+coordenada = (10, 20)
+etiquetas = {"python", "curso", "python"}
+persona = {
+    "nombre": "Lucia",
+    "edad": 20,
+}
 
-# concatenacion con f-string
-bienvenido = f"hola {NombreCompleto} ¿como estas?"
-bienvenido = f"hola {apellido_completo} ¿como estas?"
+print("Lista completa:", colores)
+print("Primer color, indice 0:", colores[0])
 
-# operadores de pertenencia (in / not in)
-print("Ricardo" in NombreCompleto)  # True
-print("Ricardo" in apellido_completo)  # False
+# Las listas son modificables.
+colores.append("amarillo")
+print("Lista despues de append():", colores)
 
-print("Ricardo" not in apellido_completo)  # False
+print("\nTupla:", coordenada)
+print("Primer valor de la tupla:", coordenada[0])
 
-##"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-# crear listas ##########################################
+# El conjunto elimina el valor repetido y no tiene un orden para indexar.
+print("\nConjunto sin duplicados:", etiquetas)
+print("'curso' esta en el conjunto:", "curso" in etiquetas)
 
-Lista = ["Ricardo", "Patricio", "Cid", "Garcia"]
-print(Lista[0] + " lista")  
-# se puede imprimir por indice
+print("\nDiccionario:", persona)
+print("Nombre por clave:", persona["nombre"])
+print("Ciudad con valor alternativo:", persona.get("ciudad", "Sin indicar"))
 
-# crear tuplas ###########################################
-#upla = ("Ricardo", "Patricio", "Cid", "Garcia")
-#rint(Tupla[0] + " tupla")  # se puede imprimir por indice
+# Se puede recorrer un diccionario como pares clave-valor.
+for clave, valor in persona.items():
+    print(f"{clave}: {valor}")
 
-# crear conjuntos #########################################  
-conjunto = {"Ricardo", "Patricio", "Cid", "Garcia"}
-print(conjunto) 
-# no se puede imprimir por indice, ya que no tiene orden
-
-# creando un diccionario (dict)
-diccionario = {
-    "nombre": "Ricardo",
-    "segundo_nombre": "Patricio",
-    "apellido": "Ciddd",
-    "segundo_apellido": "Garcia",
-    "gusto_por_programar" : True
-} 
-print(diccionario)
-print(diccionario["apellido"]) # se puede imprimir por clave
-#key: valor
-# 1 "nombre" es la clave y "Ricardo" es el valor
-# 2 las claves tambien 
-# tienen un numero de indentificacion "nombre" seria 0
-# las comas siempre se ponen al final de cada clave:valor, menos en la ultima
-# formas de imprimir un diccionario:
-print(diccionario["nombre"])  # se puede imprimir por clave
-print(diccionario.get("apellido"))  # se puede imprimir por clave
-
-###########################################################
-conjunto = {"Ricardo", "Patricio", "Cid", "Garcia", "ricardo", "ricardo", "ricardo"}
-tupla = ("Ricardo", "Patricio", "Cid", "Garcia")
-# la diferencia entre un conjunto y una tupla
-# es que el conjunto no tiene orden, 
-# mientras que la tupla si lo tiene
-# ademas la tupla imprime todo y 
-# conjunto no imprime palabras repetidas
-print(tupla[0], tupla[1], tupla[2], tupla[3])
-print("conjunto: ", conjunto)
+print("\nTipos:")
+for valor in (colores, coordenada, etiquetas, persona):
+    print(type(valor).__name__)

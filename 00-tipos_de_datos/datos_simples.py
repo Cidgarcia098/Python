@@ -1,34 +1,37 @@
-tipos_string = {
-"String"
-# "en este espacio
-    # no se puede poner un salto de linea"
+"""Clase 1: tipos de datos simples
 
-'String'
-# 'en este espacio
-    # no se puede poner un salto de linea'
-}
-    ##----------------------------------------------
+Un tipo de dato describe que clase de valor contiene una variable y que
+operaciones tienen sentido para ese valor. Python identifica el tipo
+automaticamente; podemos consultarlo con type().
 
-tipos_string_multilinea = {
-"""string"""
-    """en este espacio si se puede poner 
-        un salto de linea"""
+Tipos basicos:
+- str: texto entre comillas.
+- int: numero entero.
+- float: numero decimal (en el codigo se escribe con punto).
+- complex: numero complejo, con la parte imaginaria indicada por j.
+- bool: valor logico True o False (con mayuscula inicial).
+- NoneType: ausencia intencional de un valor, representada por None.
+"""
 
-'''string'''
-    '''en este espacio si se puede poner 
-        un salto de linea'''
-    }
-    
-    ##---------------------------------------
-    
-tipos_numeros = {
-    "int": 10,
-    "float": 10.5,
-    "complex": 3 + 4j,
-}
-#########################################
-tipos_booleanos = {
-    "bool": True,
-    "boolean": False
-}
+nombre = "Lucia"
+edad = 20
+altura = 1.68
+numero_complejo = 2 + 3j
+es_estudiante = True
+resultado_pendiente = None
 
+datos = [
+    ("nombre", nombre),
+    ("edad", edad),
+    ("altura", altura),
+    ("numero complejo", numero_complejo),
+    ("es estudiante", es_estudiante),
+    ("resultado pendiente", resultado_pendiente),
+]
+
+for etiqueta, valor in datos:
+    print(f"{etiqueta}: {valor!r} -> {type(valor).__name__}")
+
+# bool es un tipo propio, aunque en Python tambien se comporta como un
+# subtipo de int. Para aprender, conviene tratarlo como un valor logico.
+print("\nUna condicion de comparacion produce un bool:", edad >= 18)
