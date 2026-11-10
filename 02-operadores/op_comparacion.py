@@ -1,25 +1,27 @@
-es_igual_que = (8 == 2) # es igual que
-es_diferente_que = (8 != 2) # es diferente que = true
-es_mayor_que = (8 > 2) # es mayor que
-es_menor_que = (8 < 2) # es menor que
-es_mayor_o_igual_que = (8 >= 2) # es mayor o igual que
-es_menor_o_igual_que = (8 <= 2) # es menor o igual que
+"""Clase: operadores de comparacion
 
-print (es_igual_que)
-print (es_diferente_que)
-print (es_mayor_que)
-print (es_menor_que)
-print (es_mayor_o_igual_que)
-print (es_menor_o_igual_que)
+Las comparaciones enfrentan dos valores y producen un resultado booleano:
+True o False. == comprueba igualdad; =, en cambio, asigna un valor.
+"""
 
-a = 8
-b = 2
-c = 10
-comparacion = (a + b == c) # comparacion de variables 
-print (comparacion)
+edad = 18
+edad_minima = 18
 
-#comparar usuarios
-contraseña_almacenada = "ricadoMaestro"
-contraseña_ingresada = "ricardoMaestro"
-son_iguales = (contraseña_almacenada == contraseña_ingresada)
-print (son_iguales)
+print("Igual (==):", edad == edad_minima)
+print("Distinto (!=):", edad != edad_minima)
+print("Mayor (>):", edad > edad_minima)
+print("Menor (<):", edad < edad_minima)
+print("Mayor o igual (>=):", edad >= edad_minima)
+print("Menor o igual (<=):", edad <= edad_minima)
+
+# Las comparaciones se pueden guardar y luego usar en una condicion.
+tiene_edad_minima = edad >= edad_minima
+print("\nTipo del resultado:", type(tiene_edad_minima).__name__)
+
+# Python permite encadenar comparaciones para comprobar un rango.
+temperatura = 22
+esta_templado = 18 <= temperatura <= 25
+print(f"{temperatura} esta entre 18 y 25:", esta_templado)
+
+# La igualdad de texto distingue mayusculas de minusculas.
+print("\n'Python' == 'python':", "Python" == "python")

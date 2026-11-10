@@ -1,26 +1,32 @@
-# suma y resta (+ y -)
-suma = 12 + 5
-resta = 12 - 5
+"""Clase: operadores aritmeticos
 
-# multiplicacion y division (* y /)
-multiplicacion = 12 * 5
-division = 12 / 5 
-# la division siempre es flotante (float)
+Estos operadores realizan calculos. En Python, / devuelve un float incluso
+cuando el resultado es exacto. // redondea hacia abajo, tambien con negativos.
+El resto % cumple a = (a // b) * b + (a % b) para b distinto de cero.
+"""
 
-# potencia (**)
-potencia = 12 ** 5 
-# potencia o exponente ** 5
+a = 12
+b = 5
 
-# division baja (//)
-division_baja = 12 // 5 
-# division baja, redondea hacia abajo
+print(f"a = {a}, b = {b}")
+print("Suma (+):", a + b)
+print("Resta (-):", a - b)
+print("Multiplicacion (*):", a * b)
+print("Division (/):", a / b)
+print("Division entera (//):", a // b)
+print("Resto (%):", a % b)
+print("Potencia (**):", a ** b)
 
-# resto de la division (%)
-resto = 12 % 5 
-# resto de la division
+# La division por cero produce ZeroDivisionError, por eso no se ejecuta aqui.
+print("\nDivision negativa hacia abajo:", -7 // 3)
 
-# type(data) nos devuelve que tipo de dato es
-tipo_de_dato = type(division_baja) 
-# nos devuelve <class 'int'>, ya que es un numero entero
+# Los parentesis ayudan a dejar clara la precedencia de las operaciones.
+promedio = (8 + 10) / 2
+print("Promedio de 8 y 10:", promedio)
+print("Sin parentesis, multiplicacion va antes que suma:", 2 + 3 * 4)
 
-print(tipo_de_dato)
+# Las asignaciones aumentadas actualizan la variable.
+contador = 4
+contador += 3
+contador *= 2
+print("\nContador despues de += 3 y *= 2:", contador)
